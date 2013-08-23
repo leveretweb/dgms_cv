@@ -1,5 +1,7 @@
-As an experiment, I wanted to create a CV for my Rails experience, marked up using Haml and Sass. I used the [nanoc](http://nanoc.ws/) gem to generate the site and 
+As an experiment, I wanted to create a CV covering my Rails experience, marked up using Haml and Sass. I used the [nanoc](http://nanoc.ws/) gem to generate the site and compile the templates.
 
+Tutorial
+========
 
 Here's how I would create this if starting from scratch:
 
@@ -49,6 +51,24 @@ source 'http://rubygems.org'
 
 gem 'nanoc'
 gem 'haml'
+```
+
+```ruby    
+#Rules
+...
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :haml
+    layout 'default'
+  end
+end
+
+...
+
+layout '*', :haml
 ```
     % bundle
 
