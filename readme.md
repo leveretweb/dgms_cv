@@ -40,7 +40,7 @@ output/
 tmp/
 ````
 
-5. Set up to use haml
+5. Set nanoc up to use haml
 -------------------------
 
 Adding nanoc into the gemfile is probably not strictly necessary, but gives me a warm, fuzzy feeling
@@ -71,6 +71,12 @@ end
 layout '*', :haml
 ```
     % bundle
+    
+
+6. Add your content
+-------------------------
+
+I decided to use the [hResume](http://microformats.org/wiki/hresume) microformat for extra semantic goodness
 
 What I actually Did
 ====================
@@ -117,6 +123,18 @@ Here's what I actually did, recorded for my own reference, and for interest.
 17. In the docs it mentions unit tests. Ah crap - should I have been TDDing this? No, it looks OK - it's checks for valid markup and broken links. Let's try it.
 
 18. Right, the checks need some gems: W3C validators and Nokogiri for checking the links. Add them to the gemfile and bundle.
+
+19. Need to add some more content. Nice and semantic html5. 
+
+20. Hmm... maybe I should think about microformats. Better to do that as I go along, rather than retrofitting? Oh cool: <http://microformats.org/wiki/hresume> exists. <http://veerasundar.com/resume/> is a nice example of its use.
+
+21. Lets run the checks and see what they throw up. Silly html validation error (using "<<Summary goes here>>" obviously fails). Ah - seems like the validations are run on the compiled files. I guess that's obvious.
+  
+22. Fully following the hresume microformat seems like overkill - in particular marking up job titles as hcards with links to my name defined in the contact section is just nasty: http://microformats.org/wiki/hresume#Job_Titles
+
+23. Err... what? Microformat2 is a thing now? Not convinced anything uses it... Doubling up on tags (e.g. name p-name) will make the haml even less readable... I think I'm going to ignore it for now. <http://microformats.org/wiki/microformats-2>
+
+24. Finding http://diveintohtml5.info/semantics.html useful for a reminder about html5 semantics.
 
 
 
