@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 # nanoc generates the site:
 gem 'nanoc'
+gem 'guard-nanoc'
 
 # Use haml for templates:
 gem 'haml' 
