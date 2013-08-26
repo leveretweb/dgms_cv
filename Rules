@@ -28,7 +28,7 @@ compile '*' do
 end
 
 route '/stylesheet/' do
-  '/style.css'
+  '/stylesheets/screen.css'
 end
 
 route '*' do
