@@ -136,6 +136,21 @@ Here's what I actually did, recorded for my own reference, and for interest.
 
 24. Finding http://diveintohtml5.info/semantics.html useful for a reminder about html5 semantics.
 
+25. Running "nanoc" to compile each time is annoying - I think I saw an autocompile option... wtf? nanoc autcompile is deprecated? The docs don't mention that. Deprecation message suggests using nanoc-guard. Super-easy.
+
+26. Ok, now I've added this skill list I'm itching to start styling things... Could use bootstrap, but I think I should probably fully hand-craft the CSS. Let's move this CSS file to scss in any case.
+
+27. Oops - missed a couple of steps to set up scss. Firstly need to tell the rules file to use scss:
+
+    compile '/stylesheet/' do
+      filter :sass, syntax: :scss
+    end
+
+28. Also need to gitignore the sass cache. Cool - you can do it from command line: 
+
+    echo .sass-cache >> .gitignore
+
+
 
 
 

@@ -15,6 +15,7 @@
 
 compile '/stylesheet/' do
   # don’t filter or layout
+  filter :sass, syntax: :scss
 end
 
 compile '*' do

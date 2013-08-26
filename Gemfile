@@ -6,6 +6,8 @@ gem 'guard-nanoc'
 
 # Use haml for templates:
 gem 'haml' 
+# Use sass for stylesheets:
+gem 'sass'
 
 # These are used by the checks:
 gem 'nokogiri'
