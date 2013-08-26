@@ -2,7 +2,7 @@
 title: Duncan G M Stuart - Ruby on Rails Developer
 ---
 
-%header.vcard
+%header.vcard 
   %h1 
     %span.fn Duncan G M Stuart
     %span.title Ruby on Rails Developer
@@ -23,29 +23,161 @@ title: Duncan G M Stuart - Ruby on Rails Developer
         %span.country UK
 
 %section.summary
-  {{Statement here}}
+  %header
+    %h2 Profile
+  %ul
+    %li 1.5 years professional experience in Ruby-on-Rails development
+    %li 9+ years working across all stages of the software life-cycle: from strategy and requirements design through to testing and support
   
 %section
   %header
     %h2 Experience
   %ol.vcalendar
-    %li.experience.vevent
-      %span.location.vcard
-        Lead Product Developer at
+    %li.experience.vevent.vcard
+      %span.location
         %a.url.fn.org{ href: "http://dxw.com" } dxw
         %span.adr
           %span.locality London
+      %span.summary.title Lead Product Developer
       %abbr.dtstart{ title: "2012-01-01" } January 2012
-      \- present
-      .summary TODO
+      \-
+      %abbr.dtend{ title: "2013" } Present
+      %ul.skills
+        %li.skill.dev Rails 3
+        %li.skill.dev HTML5/CSS3
+        %li.skill.dev haml
+        %li.skill.dev sass
+        %li.skill.dev jquery
+        %li.skill.dev php (WordPress)
+        %li.skill.dev Bootstrap
+        %li.skill.approach Agile (Scrum)
+        %li.skill.non-tech Responsive design
+        %li.skill.non-tech User research
+        %li.skill.non-tech User testing
+      .description 
+        %p TODO
         
-    %li.experience.vevent
-      %span.location.vcard
+    %li.experience.vevent.vcard
+      %span.location
         %a.url.fn.org{ href: "http://www.swingoutlondon.co.uk" } Swing Out London
-        (Personal project)
-      %abbr.dtstart{ title: "2010-08-01" } August 2010
-      \- present
-      .summary TODO
+      %span.summary (personal project)
+      %abbr.dtstart{ title: "2010-08" } August 2010
+      \-
+      %abbr.dtend{ title: "2013" } Present
+      %ul.skills
+        %li.skill.dev Rails 3
+        %li.skill.dev HTML5/CSS3
+        %li.skill.dev haml
+        %li.skill.dev sass
+        %li.skill.dev Google Maps
+        %li.skill.approach Agile
+        %li.skill.non-tech Responsive design
+        %li.skill.non-tech Social Media Management
+      .description 
+        %p TODO
+      
+    %li.experience.vevent.vcard
+      %span.location
+        %a.url.fn.org{ href: "http://uk.zopa.com/" }
+          Zopa
+        %span.adr
+          %span.locality London
+      %span.summary.title Scrum Master/Analyst
+      %abbr.dtstart{ title: "2011-08-19" } August
+      \-
+      %abbr.dtend{ title: "2011-12-05" } December 2011
+      %ul.skills
+        %li.skill.approach Agile
+        %li.skill.approach Kanban
+        %li.skill.non-tech Requirements Gathering
+        %li.skill.non-tech Business Process Modelling
+      .description
+        %p TODO
+     
+    %li.experience.vevent.vcard
+      %span.location
+        %a.url.fn.org{ href: "http://new-bamboo.co.uk/" } New Bamboo
+        %span.adr
+          %span.locality London
+      %span.summary Work experience 
+      %span.duration (one week)
+      %abbr.dtstart{ title: "2011-08-01" } August 2011
+      %ul.skills
+        %li.skill.approach Agile
+        %li.skill.non-tech User Stories
+      .description
+        %p 
+          I wanted to see how an agile Rails agency works. I worked on some RFPs and helped one of their clients (
+          %a{ href: "http://www.fusion-universal.com"}> Fuse
+          ) to refine their user stories.
+    
+    %li.experience.vevent.vcard
+      %span.location
+        %a.url.fn.org{ href: "https://www.baesystemsdetica.com/" } Detica
+        %span.adr
+          %span.locality London/Guildford
+      %span.summary.title Lead developer
+      %abbr.dtstart{ title: "2006-09-19" } September 2006
+      \-
+      %abbr.dtend{ title: "2011-12-05" } July 2011
+      %ul.skills
+        %li.skill.dev Rails 2
+        %li.skill.dev Oracle
+        %li.skill.dev SQL
+        %li.skill.dev XML/XSD/WSDL
+        %li.skill.dev SOAP
+        %li.skill.approach Agile (Scrum)
+      .description 
+        %p TODO
+      
+    %li.experience.vevent.vcard
+      %span.location
+        %a.url.fn.org{ href: "http://www.qinetiq.com/" } QinetiQ
+        %span.adr
+          %span.locality> Malvern
+          ,
+          %span.region Worcestershire
+      %span.summary.title Assurance Analyst      
+      %abbr.dtstart{ title: "2004-09" } September 2004
+      \-
+      %abbr.dtend{ title: "2006-08" } August 2006
+      %ul.skills
+        %li.skill.non-tech Business Process Modelling
+        %li.skill.non-tech Requirements Gathering
+      .description 
+        %p Safety and Security analysis of systems for HM Government and Defence clients.
+      
+    
+%section.summary
+  %header
+    %h2 Education
+  %ol.vcalendar
+    %li.vevent
+      %span.summary
+        Certificate in Software Engineering
+      %span.location.vcard
+        %a.url.fn.org{ href: "http://www.ox.ac.uk/" } University of Oxford
+      (
+      %abbr.dtstart.hidden{ title: "2001-10" }> 2006
+      %abbr.dtend{ title: "2004-06"}>2004
+      )
+    %li.vevent
+      %span.summary
+        %abbr{ title: "Bachelor of Arts" } BA
+        Mathematics and Computer Science
+      %span.location.vcard
+        %a.url.fn.org{ href: "http://www.ox.ac.uk/" } University of Oxford
+      (
+      %abbr.dtstart.hidden{ title: "2004" }> 2004
+      %abbr.dtend{ title: "2006" }>2006
+      )
+      
+%section.interests
+  %header
+    %h2 Interests
+    %p Swing dancing (Charleston, Lindy Hop) - I regularly travel to dance, learn and compete at camps around Europe; Languages (French + some Spanish and Swedish)
+      
+    
 
     
         
