@@ -4,6 +4,9 @@ source 'http://rubygems.org'
 gem 'nanoc'
 gem 'guard-nanoc'
 
+# development webserver:
+gem 'adsf'
+
 # Use haml for templates:
 gem 'haml' 
 # Use sass for stylesheets:

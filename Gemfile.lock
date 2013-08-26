@@ -1,6 +1,8 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    adsf (1.1.1)
+      rack (>= 1.0.0)
     coderay (1.0.9)
     colored (1.2)
     cri (2.3.0)
@@ -32,6 +34,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    rack (1.5.2)
     rb-fsevent (0.9.3)
     rb-inotify (0.9.1)
       ffi (>= 0.5.0)
@@ -49,6 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  adsf
   guard-nanoc
   haml
   nanoc
