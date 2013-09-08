@@ -1,0 +1,275 @@
+@import "reset";
+
+%clearfix {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+body {
+  background: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.2; 
+}
+
+#main {
+
+  @mixin coloured-border {
+    border-left: 8px solid;
+    padding: 15px ;
+  }
+
+  @mixin basic-list {
+    list-style: disc;
+    margin-left: 20px;
+    li {
+      margin-bottom:10px;
+    }
+  }
+
+  header.vcard {
+    @include coloured-border;
+    padding-bottom: 15px;
+    h1 {
+      .fn {
+        display: block;
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+      .title {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+    }    
+    dl {
+      @extend %clearfix;
+      min-width: 240px;
+      dt {
+        float: left;
+        clear: left;
+        width: 80px;
+        &:after {
+         content: ":"
+        }
+      }
+      dd {
+        float: right;
+        width: 160px;
+      }
+    }
+  }
+  section {
+    @include coloured-border;
+    clear: both;
+    margin-top: 20px;
+    h2 {
+      margin-bottom: 15px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    &.summary ul {
+      @include basic-list;
+    }
+
+    .experience {
+      margin: 40px 0 10px 0;
+      h3.location {
+        margin-bottom: 5px;
+        a.org {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .adr{
+          margin-left: 30px;
+          font-style: italic;
+        }
+      }
+      ul.skills {
+        margin-top: 15px;
+        li {
+          display: inline-block;
+          padding: 3px 8px;
+          margin-bottom: 4px;
+          color: white;
+          
+          // Bootstrap colours:
+          // default: #999999;
+          // important: #b94a48;
+          // warning: #f89406;
+          // success: #468847;
+          // info: #3a87ad;
+          // inverse: #333333;
+
+          &.dev {
+            background-color: #b94a48;
+          }
+          &.non-tech {
+            background-color: #3a87ad;
+          }
+          &.approach {
+            background-color: #468847;
+          }
+        }
+      }
+      .description ul {
+        @include basic-list;
+        margin-top: 15px;
+      }
+    }
+
+    .education {
+      margin-bottom: 15px;
+      h3.summary {
+        font-size: 18px;
+        display: block;
+      }
+      .location, .dtstart, .dtend {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+
+
+// SMALL ONLY
+@media only screen and (max-width: 767px) {
+}
+
+// TABLET & SMALLER LAPTOPS
+@media only screen and (min-width: 768px) {
+}
+
+// DESKTOP
+@media only screen and (min-width: 960px) {
+}
+
+// LARGE VIEWING SIZE
+@media only screen and (min-width: 1240px) {
+}
+
+
+
+
+// @mixin unstyled-list {
+//   margin: 0;
+//   list-style: none;
+// }
+
+// .hidden {
+//   display: none;
+// }
+
+
+
+// a {
+//   text-decoration: none;
+// }
+// a:link, a:visited {
+//   color: #f30;
+// }
+// a:hover {
+//   color: #f90;
+// }
+
+// #main {
+//   float: left;
+//   top: 40px;
+//   left: 280px;
+//   width: 500px;
+  
+//   h1 {
+//     font-size: 40px;
+//     font-weight: normal;
+//     line-height: 40px;
+//     letter-spacing: -1px;
+//   }
+  
+//   p {
+//     margin: 20px 0;
+//     font-size: 15px;
+//     line-height: 20px;
+//   }
+  
+//   ul, ol {
+//     margin: 20px;
+//   }
+  
+//   li {
+//     font-size: 15px;
+//     line-height: 20px;
+//   }
+
+//   ol.vcalendar {
+//     @include unstyled-list;
+//   }
+  
+  
+//   li.experience {
+//     margin: 20px 0;
+//     .location {
+//       display: block;
+//     }
+//     .org {
+//       font-size: 30px;
+//     }
+//   }
+  
+//   ul.skills {
+//     @include unstyled-list;
+//     li {
+//       display: inline-block;
+//       padding: 3px 8px;
+//       margin-bottom: 4px;
+//       color: white;
+      
+//       // Bootstrap colours:
+//       // default: #999999;
+//       // important: #b94a48;
+//       // warning: #f89406;
+//       // success: #468847;
+//       // info: #3a87ad;
+//       // inverse: #333333;
+
+//       &.dev {
+//         background-color: #b94a48;
+//       }
+//       &.non-tech {
+//         background-color: #3a87ad;
+//       }
+//       &.approach {
+//         background-color: #468847;
+//       }
+//     }
+//   }
+// }
+
+
+// #sidebar {
+//   float: right;
+//   width: 200px;
+//   padding: 20px 20px 0 0;
+//   border-right: 1px solid #ccc;
+//   text-align: right;
+  
+//   h2 {
+//     text-transform: uppercase;
+//     font-size: 13px;
+//     color: #333;
+//     letter-spacing: 1px;
+//     line-height: 20px;
+//   }
+  
+//   ul {
+//     list-style-type: none;
+//     margin: 20px 0;
+//   }
+  
+//   li {
+//     font-size: 14px;
+//     line-height: 20px;
+//   }
+// }

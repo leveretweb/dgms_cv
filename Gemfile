@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 # nanoc generates the site:
 gem 'nanoc'
 gem 'guard-nanoc'
+gem 'guard-livereload'
 
 # development webserver:
 gem 'adsf'
