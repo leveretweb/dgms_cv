@@ -1,3 +1,5 @@
+[![Dependency Status](https://gemnasium.com/dgmstuart/dgms_cv.png)](https://gemnasium.com/dgmstuart/dgms_cv)
+
 As an experiment, I wanted to create a CV covering my Rails experience, marked up using Haml and Sass. I used the [nanoc](http://nanoc.ws/) gem to generate the site and compile the templates.
 
 Tutorial
