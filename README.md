@@ -2,6 +2,8 @@
 
 As an experiment, I wanted to create a CV covering my Rails experience, marked up using Haml and Sass. I used the [nanoc](http://nanoc.ws/) gem to generate the site and compile the templates.
 
+Generated site live at http://duncangmstuart.co.uk/rails_cv/
+
 Tutorial
 ========
 
