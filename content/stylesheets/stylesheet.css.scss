@@ -26,6 +26,7 @@ body {
 }
 
 #main {
+  max-width: 800px;
 
   @mixin coloured-border {
     border-left: 8px solid;
@@ -38,6 +39,11 @@ body {
     li {
       margin-bottom:10px;
     }
+  }
+
+  @mixin colour-on-hover {
+    transition: color 0.5s ease;
+    &:hover { color: $red; }
   }
 
   header.vcard {
@@ -54,21 +60,29 @@ body {
         font-size: 20px;
         margin-bottom: 30px;
       }
-    }    
-    dl {
-      @extend %clearfix;
-      min-width: 240px;
-      dt {
-        float: left;
-        clear: left;
-        width: 80px;
-        &:after {
-         content: ":"
+    }
+
+    address {
+      max-width: 500px;
+      a { @include colour-on-hover; }
+      dl {
+        @extend %clearfix;
+        min-width: 240px;
+        dt {
+          float: left;
+          clear: left;
+          width: 80px;
+          &:after {
+           content: ":"
+          }
+        }
+        dd {
+          float: right;
+          width: 160px;
         }
       }
-      dd {
-        float: right;
-        width: 160px;
+      .locality:after {
+        content: ","
       }
     }
   }
@@ -87,14 +101,22 @@ body {
 
     .experience {
       margin: 40px 0 10px 0;
-      h3.location {
-        margin-bottom: 5px;
-        a.org {
-          font-size: 20px;
-          font-weight: bold;
+      header {
+        font-size: 18px;
+        h3.location {
+          margin-bottom: 5px;
+          a.org {
+            font-size: 25px;
+            font-weight: bold;
+            @include colour-on-hover;
+          }
+          .adr{
+            font-style: italic;
+            &:before { content: "(" }
+            &:after { content: ")" }
+          }
         }
-        .adr{
-          margin-left: 30px;
+        .dtstart, .dtend, .duration {
           font-style: italic;
         }
       }
@@ -133,31 +155,52 @@ body {
         font-style: italic;
       }
     }
+  }
 
-    &.colophon {
-      h3 {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      li {
-        font-style: italic;
-        margin-bottom: 5px;  
-        a {
-          color: $link-color;
-        }
+  .interests {
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .colophon {
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    li {
+      font-style: italic;
+      margin-bottom: 5px;  
+      a {
+        color: $link-color;
       }
     }
   }
 }
 
 
-// SMALL ONLY
+// MOBILE ONLY
+@media only screen and (max-width: 480px) {
+  .experience .summary {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+// SMALL
 @media only screen and (max-width: 767px) {
+.experience .summary {
+    margin-right: 20px;
+  }
 }
 
 // TABLET & SMALLER LAPTOPS
 @media only screen and (min-width: 768px) {
+  .experience .summary {
+    margin-right: 150px;
+  }
+  
 }
 
 // DESKTOP
