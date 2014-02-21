@@ -1,8 +1,9 @@
 @import "reset";
-
 // Colours
 $link-color: #3a87ad;
 $white:      #fff;
+$font-color: #000;
+$light-grey: #bbb;
 
 // Bootstrap label colours:
 $grey:    #999999; //default
@@ -28,11 +29,6 @@ body {
 #main {
   max-width: 800px;
 
-  @mixin coloured-border {
-    border-left: 8px solid;
-    padding: 15px ;
-  }
-
   @mixin basic-list {
     list-style: disc;
     margin-left: 20px;
@@ -40,6 +36,12 @@ body {
       margin-bottom:10px;
     }
   }
+
+  @mixin coloured-border {
+    border-left: 8px solid;
+    padding: 15px ;
+  }
+
 
   @mixin colour-on-hover {
     transition: color 0.5s ease;
@@ -122,21 +124,15 @@ body {
       }
       ul.skills {
         margin-top: 15px;
-        li {
+        li.skill {
           display: inline-block;
           padding: 3px 8px;
           margin-bottom: 4px;
           color: white;
 
-          &.dev {
-            background-color: $red;
-          }
-          &.non-tech {
-            background-color: $blue;
-          }
-          &.approach {
-            background-color: $green;
-          }
+          &.dev       { background-color: $red; }
+          &.non-tech  { background-color: $blue; }
+          &.approach  { background-color: $green; }
         }
       }
       .description ul {
@@ -180,6 +176,7 @@ body {
 }
 
 
+
 // MOBILE ONLY
 @media only screen and (max-width: 480px) {
   .experience .summary {
@@ -190,7 +187,7 @@ body {
 
 // SMALL
 @media only screen and (max-width: 767px) {
-.experience .summary {
+  .experience .summary {
     margin-right: 20px;
   }
 }
@@ -210,3 +207,61 @@ body {
 // LARGE VIEWING SIZE
 @media only screen and (min-width: 1240px) {
 }
+
+@media print {
+  body {
+    color: $font-color;
+    background: $white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    margin: 1.2cm;
+  }
+  
+  // Don't add page breaks in awkward places:
+  h2, h3 { page-break-after: avoid; }
+  header { page-break-after: avoid; }
+  .skills { 
+    page-break-after: avoid; 
+    page-break-inside: avoid;
+  }
+  
+  // @mixin add_link {
+  //   a[href^=http]:after {
+  //     content:" (" attr(href) ") ";
+  //   }
+  // }
+  
+  // Add links in specific places
+  .experience .location a[href^=http]:after { 
+    content:" - " attr(href);
+  }
+  .source_code a[href^=http]:after { 
+    content:" (" attr(href) ") ";
+  }
+  
+}
+// // Force colour for printers which allow it:
+@media print and (color) {
+// @media print and (min-color-index: 256) {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+// Monochrome styles:
+@media print and (monochrome) {
+// @media print and (max-color-index: 255) {
+  #main section .experience ul.skills li.skill { 
+    color: $font-color;
+    border: 1px solid $light-grey;
+    &.dev       { border-style: solid; }
+    &.non-tech  { border-style: dashed; }
+    &.approach  { border-style: dotted; }
+  }
+}
+

@@ -13,14 +13,9 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile '/stylesheets/stylesheet/' do
+compile '/stylesheets/*/' do
   filter :sass, syntax: :scss
   # filter :relativize_paths, type: :css
-end
-
-compile '/stylesheets/*/' do
-  # don’t compile partials
-  filter :sass, syntax: :scss
 end
 
 compile '*' do
@@ -32,13 +27,8 @@ compile '*' do
   end
 end
 
-route '/stylesheets/stylesheet' do
-  '/stylesheets/screen.css'
-end
-
-route '/stylesheets/*/' do
-  nil
-end
+route('/stylesheets/stylesheet')  { '/stylesheets/styles.css'; }
+route('/stylesheets/*/')          { nil }
 
 route '*' do
   if item.binary?
