@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # nanoc generates the site:
-gem 'nanoc', '~> 3.6'
+gem 'nanoc', '~> 3.7.1'
 gem 'guard-nanoc', '~> 1.0'
 gem 'guard-livereload', '~> 2.1'
 
