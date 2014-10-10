@@ -23,7 +23,7 @@ $blue:    #3a87ad; //info
 body {
   background: $white;
   font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.2; 
+  line-height: 1.2;
 }
 
 #main {
@@ -167,7 +167,7 @@ body {
     }
     li {
       font-style: italic;
-      margin-bottom: 5px;  
+      margin-bottom: 5px;
       a {
         color: $link-color;
       }
@@ -197,7 +197,7 @@ body {
   .experience .summary {
     margin-right: 150px;
   }
-  
+
 }
 
 // DESKTOP
@@ -220,43 +220,42 @@ body {
   @page {
     margin: 1.2cm;
   }
-  
+
   // Don't add page breaks in awkward places:
   h2, h3 { page-break-after: avoid; }
   header { page-break-after: avoid; }
-  .skills { 
-    page-break-after: avoid; 
+  .skills {
+    page-break-after: avoid;
     page-break-inside: avoid;
   }
-  
+
   // @mixin add_link {
   //   a[href^=http]:after {
   //     content:" (" attr(href) ") ";
   //   }
   // }
-  
+
   // Add links in specific places
-  .experience .location a[href^=http]:after { 
+  .experience .location a[href^=http]:after {
     content:" - " attr(href);
   }
-  .source_code a[href^=http]:after { 
+  .source_code a[href^=http]:after {
     content:" (" attr(href) ") ";
   }
-  
+
 }
 // // Force colour for printers which allow it:
 @media print and (color) {
 // @media print and (min-color-index: 256) {
   * {
     -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
   }
 }
 
 // Monochrome styles:
 @media print and (monochrome) {
 // @media print and (max-color-index: 255) {
-  #main section .experience ul.skills li.skill { 
+  #main section .experience ul.skills li.skill {
     color: $font-color;
     border: 1px solid $light-grey;
     &.dev       { border-style: solid; }
