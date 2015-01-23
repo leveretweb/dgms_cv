@@ -217,6 +217,7 @@ body {
     padding: 0;
   }
 
+  // The W3C Validator doesn't parse this. Bug report: https://www.w3.org/Bugs/Public/show_bug.cgi?id=14139
   @page {
     margin: 1.2cm;
   }
