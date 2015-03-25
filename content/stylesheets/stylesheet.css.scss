@@ -12,6 +12,19 @@ $yellow:  #f89406; //warning
 $green:   #468847; //success
 $blue:    #3a87ad; //info
 
+// Margin and padding
+$content-spacing:   15px;
+$paragraph-spacing: 10px;
+
+
+// Font sizes
+$text:               16px;
+$title:              35px;
+$sub-title:          20px;
+$section-heading:    25px;
+$section-subheading: 18px;
+$minor-heading:      20px;
+
 %clearfix {
   &:after {
     content: " ";
@@ -22,6 +35,7 @@ $blue:    #3a87ad; //info
 
 body {
   background: $white;
+  font-size: $text;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.2;
 }
@@ -33,7 +47,7 @@ body {
     list-style: disc;
     margin-left: 20px;
     li {
-      margin-bottom:10px;
+      margin-bottom:$paragraph-spacing;
     }
   }
 
@@ -59,16 +73,15 @@ body {
 
   header.vcard {
     @include coloured-border;
-    padding-bottom: 15px;
     h1 {
       .fn {
         display: block;
-        font-size: 35px;
+        font-size: $title;
         margin-bottom: 20px;
       }
       .title {
         display: block;
-        font-size: 20px;
+        font-size: $sub-title;
         margin-bottom: 30px;
       }
     }
@@ -102,77 +115,81 @@ body {
     clear: both;
     margin-top: 20px;
     h2 {
-      margin-bottom: 15px;
-      font-size: 25px;
+      margin-bottom: $content-spacing;
+      font-size: $section-heading;
       font-weight: bold;
     }
     &.summary ul {
       @include basic-list;
     }
+  }
 
-    .experience {
-      margin: 40px 0 10px 0;
-      @include show-links-on-hover;
-      header {
-        font-size: 18px;
-        h3.location {
-          margin-bottom: 5px;
-          a.org {
-            font-size: 25px;
-            font-weight: bold;
-            @include colour-on-hover;
-          }
-          .adr{
-            font-style: italic;
-            &:before { content: "(" }
-            &:after { content: ")" }
-          }
+  section .experience {
+    margin: 40px 0 10px 0;
+    @include show-links-on-hover;
+    header {
+      font-size: $section-subheading;
+      h3.location {
+        margin-bottom: 5px;
+        a.org {
+          font-size: $section-heading;
+          font-weight: bold;
+          @include colour-on-hover;
         }
-        .dtstart, .dtend, .duration {
+        .adr{
           font-style: italic;
+          &:before { content: "(" }
+          &:after { content: ")" }
         }
       }
-      ul.skills {
-        margin-top: 15px;
-        li.skill {
-          display: inline-block;
-          padding: 7px 8px 3px;
-          margin-bottom: 4px;
-          color: white;
-
-          &.dev       { background-color: $red; }
-          &.non-tech  { background-color: $blue; }
-          &.approach  { background-color: $green; }
-        }
-      }
-      .description ul {
-        @include basic-list;
-        margin-top: 15px;
-      }
-    }
-
-    .education {
-      @include show-links-on-hover;
-      margin-bottom: 15px;
-      h3.summary {
-        font-size: 18px;
-        display: block;
-      }
-      .location, .dtstart, .dtend {
+      .dtstart, .dtend, .duration {
         font-style: italic;
       }
+    }
+    ul.skills {
+      margin-top: $content-spacing;
+      li.skill {
+        display: inline-block;
+        padding: 7px 8px 3px;
+        margin-bottom: 4px;
+        color: white;
+
+        &.dev       { background-color: $red; }
+        &.non-tech  { background-color: $blue; }
+        &.approach  { background-color: $green; }
+      }
+    }
+    .description {
+      ul, p {
+        margin-top: $content-spacing;
+      }
+      ul {
+        @include basic-list;
+      }
+    }
+  }
+
+  section .education {
+    @include show-links-on-hover;
+    margin-bottom: $content-spacing;
+    h3.summary {
+      font-size: $section-subheading;
+      display: block;
+    }
+    .location, .dtstart, .dtend {
+      font-style: italic;
     }
   }
 
   .interests {
     p {
-      margin-bottom: 10px;
+      margin-bottom: $paragraph-spacing;
     }
   }
 
   .colophon {
     h3 {
-      font-size: 20px;
+      font-size: $minor-heading;
       font-weight: bold;
       margin-bottom: 10px;
     }
