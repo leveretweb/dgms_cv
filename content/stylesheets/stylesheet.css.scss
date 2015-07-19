@@ -187,6 +187,7 @@ section .education {
 }
 
 .interests {
+  @include show-links-on-hover;
   p {
     margin-bottom: $paragraph-spacing;
   }
