@@ -1,57 +1,6 @@
 @import "reset";
-
-// Colours
-$link-color: #3a87ad;
-$white:      #fff;
-$font-color: #000;
-$light-grey: #bbb;
-
-// Bootstrap label colours:
-$grey:    #999999; //default
-$red:     #b94a48; //danger
-$yellow:  #f89406; //warning
-$green:   #468847; //success
-$blue:    #3a87ad; //info
-
-// Margin and padding
-$content-spacing:   15px;
-$paragraph-spacing: 10px;
-
-// Font sizes
-$text:               16px;
-$title:              35px;
-$sub-title:          20px;
-$section-heading:    25px;
-$section-subheading: 18px;
-$minor-heading:      20px;
-
-@mixin basic-list {
-  list-style: disc;
-  margin-left: 20px;
-  li {
-    margin-bottom: $paragraph-spacing;
-  }
-}
-
-@mixin coloured-border {
-  border-left: 8px solid;
-  padding: 15px ;
-}
-
-
-@mixin colour-on-hover {
-  transition: color 0.5s ease;
-  &:hover { color: $red; }
-}
-
-@mixin show-links-on-hover {
-  &:hover {
-    a {
-      text-decoration: underline;
-      @include colour-on-hover;
-    }
-  }
-}
+@import "variables";
+@import "mixins";
 
 %clearfix {
   &:after {
@@ -71,6 +20,7 @@ body {
 #main {
   max-width: 800px;
 }
+
 header.vcard {
   @include coloured-border;
 
@@ -208,87 +158,5 @@ section .education {
   }
 }
 
-
-// MOBILE ONLY
-@media only screen and (max-width: 480px) {
-  .experience .summary {
-    display: block;
-    margin-bottom: 10px;
-  }
-}
-
-// SMALL
-@media only screen and (max-width: 767px) {
-  .experience .summary {
-    margin-right: 20px;
-  }
-}
-
-// TABLET & SMALLER LAPTOPS
-@media only screen and (min-width: 768px) {
-  .experience .summary {
-    margin-right: 150px;
-  }
-
-}
-
-// DESKTOP
-@media only screen and (min-width: 960px) {
-}
-
-// LARGE VIEWING SIZE
-@media only screen and (min-width: 1240px) {
-}
-
-@media print {
-  body {
-    color: $font-color;
-    background: $white;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  // The W3C Validator doesn't parse this. Bug report: https://www.w3.org/Bugs/Public/show_bug.cgi?id=14139
-  @page {
-    margin: 1.2cm;
-  }
-
-  // Don't add page breaks in awkward places:
-  h2, h3 { page-break-after: avoid; }
-  header { page-break-after: avoid; }
-  .skills {
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-
-  // Add links in specific places
-  .experience .location a[href^=http]:after {
-    content: " - " attr(href);
-  }
-  .source_code a[href^=http]:after {
-    content: " (" attr(href) ") ";
-  }
-
-}
-// Force colour for printers which allow it:
-@media print and (color) {
-// @media print and (min-color-index: 256) {
-  * {
-    -webkit-print-color-adjust: exact;
-  }
-}
-
-// Monochrome styles:
-@media print and (monochrome) {
-  // should be able to use `max-color-index: 255` instead of `monochrome`,
-  // but couldn't get it to work
-  #main section .experience ul.skills li.skill {
-    color: $font-color;
-    border: 1px solid $light-grey;
-    &.dev       { border-style: solid; }
-    &.non-tech  { border-style: dashed; }
-    &.approach  { border-style: dotted; }
-  }
-}
-
+@import "responsive";
+@import "print";

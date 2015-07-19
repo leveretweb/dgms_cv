@@ -1,0 +1,53 @@
+@import "variables";
+
+@media print {
+  body {
+    color: $font-color;
+    background: $white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  // The W3C Validator doesn't parse this. Bug report: https://www.w3.org/Bugs/Public/show_bug.cgi?id=14139
+  @page {
+    margin: 1.2cm;
+  }
+
+  // Don't add page breaks in awkward places:
+  h2, h3 { page-break-after: avoid; }
+  header { page-break-after: avoid; }
+  .skills {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  // Add links in specific places
+  .experience .location a[href^=http]:after {
+    content: " - " attr(href);
+  }
+  .source_code a[href^=http]:after {
+    content: " (" attr(href) ") ";
+  }
+
+}
+// Force colour for printers which allow it:
+@media print and (color) {
+// @media print and (min-color-index: 256) {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+// Monochrome styles:
+@media print and (monochrome) {
+  // should be able to use `max-color-index: 255` instead of `monochrome`,
+  // but couldn't get it to work
+  #main section .experience ul.skills li.skill {
+    color: $font-color;
+    border: 1px solid $light-grey;
+    &.dev       { border-style: solid; }
+    &.non-tech  { border-style: dashed; }
+    &.approach  { border-style: dotted; }
+  }
+}
