@@ -4,6 +4,9 @@
   li {
     margin-bottom: $paragraph-spacing;
   }
+  ul {
+    list-style: circle;
+  }
 }
 
 @mixin coloured-border {
