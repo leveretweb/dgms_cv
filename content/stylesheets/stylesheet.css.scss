@@ -1,4 +1,5 @@
 @import "reset";
+
 // Colours
 $link-color: #3a87ad;
 $white:      #fff;
@@ -16,7 +17,6 @@ $blue:    #3a87ad; //info
 $content-spacing:   15px;
 $paragraph-spacing: 10px;
 
-
 // Font sizes
 $text:               16px;
 $title:              35px;
@@ -24,6 +24,34 @@ $sub-title:          20px;
 $section-heading:    25px;
 $section-subheading: 18px;
 $minor-heading:      20px;
+
+@mixin basic-list {
+  list-style: disc;
+  margin-left: 20px;
+  li {
+    margin-bottom: $paragraph-spacing;
+  }
+}
+
+@mixin coloured-border {
+  border-left: 8px solid;
+  padding: 15px ;
+}
+
+
+@mixin colour-on-hover {
+  transition: color 0.5s ease;
+  &:hover { color: $red; }
+}
+
+@mixin show-links-on-hover {
+  &:hover {
+    a {
+      text-decoration: underline;
+      @include colour-on-hover;
+    }
+  }
+}
 
 %clearfix {
   &:after {
@@ -42,167 +70,142 @@ body {
 
 #main {
   max-width: 800px;
+}
+header.vcard {
+  @include coloured-border;
 
-  @mixin basic-list {
-    list-style: disc;
-    margin-left: 20px;
-    li {
-      margin-bottom:$paragraph-spacing;
-    }
-  }
-
-  @mixin coloured-border {
-    border-left: 8px solid;
-    padding: 15px ;
-  }
-
-
-  @mixin colour-on-hover {
-    transition: color 0.5s ease;
-    &:hover { color: $red; }
-  }
-
-  @mixin show-links-on-hover {
-    &:hover {
-      a {
-        text-decoration: underline;
-        @include colour-on-hover;
-      }
-    }
-  }
-
-  header.vcard {
-    @include coloured-border;
-    h1 {
-      .fn {
-        display: block;
-        font-size: $title;
-        margin-bottom: 20px;
-      }
-      .title {
-        display: block;
-        font-size: $sub-title;
-        margin-bottom: 30px;
-      }
-    }
-
-    address {
-      max-width: 500px;
-      @include show-links-on-hover;
-      dl {
-        @extend %clearfix;
-        min-width: 240px;
-        dt {
-          float: left;
-          clear: left;
-          width: 80px;
-          &:after {
-           content: ":"
-          }
-        }
-        dd {
-          float: right;
-          width: 160px;
-        }
-      }
-      .locality:after {
-        content: ","
-      }
-    }
-  }
-  section {
-    @include coloured-border;
-    clear: both;
-    margin-top: 20px;
-    h2 {
-      margin-bottom: $content-spacing;
-      font-size: $section-heading;
-      font-weight: bold;
-    }
-    &.summary ul {
-      @include basic-list;
-    }
-  }
-
-  section .experience {
-    margin: 40px 0 10px 0;
-    @include show-links-on-hover;
-    header {
-      font-size: $section-subheading;
-      h3.location {
-        margin-bottom: 5px;
-        a.org {
-          font-size: $section-heading;
-          font-weight: bold;
-          @include colour-on-hover;
-        }
-        .adr{
-          font-style: italic;
-          &:before { content: "(" }
-          &:after { content: ")" }
-        }
-      }
-      .dtstart, .dtend, .duration {
-        font-style: italic;
-      }
-    }
-    ul.skills {
-      margin-top: $content-spacing;
-      li.skill {
-        display: inline-block;
-        padding: 7px 8px 3px;
-        margin-bottom: 4px;
-        color: white;
-
-        &.dev       { background-color: $red; }
-        &.non-tech  { background-color: $blue; }
-        &.approach  { background-color: $green; }
-      }
-    }
-    .description {
-      ul, p {
-        margin-top: $content-spacing;
-      }
-      ul {
-        @include basic-list;
-      }
-    }
-  }
-
-  section .education {
-    @include show-links-on-hover;
-    margin-bottom: $content-spacing;
-    h3.summary {
-      font-size: $section-subheading;
+  h1 {
+    .fn {
       display: block;
+      font-size: $title;
+      margin-bottom: 20px;
     }
-    .location, .dtstart, .dtend {
-      font-style: italic;
-    }
-  }
-
-  .interests {
-    p {
-      margin-bottom: $paragraph-spacing;
+    .title {
+      display: block;
+      font-size: $sub-title;
+      margin-bottom: 30px;
     }
   }
 
-  .colophon {
-    h3 {
-      font-size: $minor-heading;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    li {
-      font-style: italic;
-      margin-bottom: 5px;
-      a {
-        color: $link-color;
+  address {
+    @include show-links-on-hover;
+
+    max-width: 500px;
+    dl {
+      @extend %clearfix;
+      min-width: 240px;
+      dt {
+        float: left;
+        clear: left;
+        width: 80px;
+        &:after {
+         content: ":"
+        }
       }
+      dd {
+        float: right;
+        width: 160px;
+      }
+    }
+    .locality:after {
+      content: ","
     }
   }
 }
 
+section {
+  @include coloured-border;
+
+  clear: both;
+  margin-top: 20px;
+  h2 {
+    margin-bottom: $content-spacing;
+    font-size: $section-heading;
+    font-weight: bold;
+  }
+  &.summary ul {
+    @include basic-list;
+  }
+}
+
+section .experience {
+  @include show-links-on-hover;
+
+  margin: 40px 0 10px 0;
+  header {
+    font-size: $section-subheading;
+    h3.location {
+      margin-bottom: 5px;
+      a.org {
+        font-size: $section-heading;
+        font-weight: bold;
+        @include colour-on-hover;
+      }
+      .adr{
+        font-style: italic;
+        &:before { content: "(" }
+        &:after { content: ")" }
+      }
+    }
+    .dtstart, .dtend, .duration {
+      font-style: italic;
+    }
+  }
+  ul.skills {
+    margin-top: $content-spacing;
+    li.skill {
+      display: inline-block;
+      padding: 7px 8px 3px;
+      margin-bottom: 4px;
+      color: white;
+
+      &.dev       { background-color: $red; }
+      &.non-tech  { background-color: $blue; }
+      &.approach  { background-color: $green; }
+    }
+  }
+  .description {
+    ul, p {
+      margin-top: $content-spacing;
+    }
+    ul {
+      @include basic-list;
+    }
+  }
+}
+
+section .education {
+  @include show-links-on-hover;
+  margin-bottom: $content-spacing;
+  h3.summary {
+    font-size: $section-subheading;
+    display: block;
+  }
+  .location, .dtstart, .dtend {
+    font-style: italic;
+  }
+}
+
+.interests {
+  p {
+    margin-bottom: $paragraph-spacing;
+  }
+}
+
+.colophon {
+  h3 {
+    font-size: $minor-heading;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  li {
+    font-style: italic;
+    margin-bottom: 5px;
+    a {
+      color: $link-color;
+    }
+  }
+}
 
 
 // MOBILE ONLY
@@ -258,22 +261,16 @@ body {
     page-break-inside: avoid;
   }
 
-  // @mixin add_link {
-  //   a[href^=http]:after {
-  //     content:" (" attr(href) ") ";
-  //   }
-  // }
-
   // Add links in specific places
   .experience .location a[href^=http]:after {
-    content:" - " attr(href);
+    content: " - " attr(href);
   }
   .source_code a[href^=http]:after {
-    content:" (" attr(href) ") ";
+    content: " (" attr(href) ") ";
   }
 
 }
-// // Force colour for printers which allow it:
+// Force colour for printers which allow it:
 @media print and (color) {
 // @media print and (min-color-index: 256) {
   * {
@@ -283,7 +280,8 @@ body {
 
 // Monochrome styles:
 @media print and (monochrome) {
-// @media print and (max-color-index: 255) {
+  // should be able to use `max-color-index: 255` instead of `monochrome`,
+  // but couldn't get it to work
   #main section .experience ul.skills li.skill {
     color: $font-color;
     border: 1px solid $light-grey;
