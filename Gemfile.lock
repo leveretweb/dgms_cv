@@ -27,6 +27,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
+    octopress-deploy (1.3.0)
+      colorator
     rb-fsevent (0.9.7)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -41,6 +43,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.0.2)
   jekyll-haml (~> 0.1.3)
+  octopress-deploy (~> 1.3.0)
 
 BUNDLED WITH
    1.11.2

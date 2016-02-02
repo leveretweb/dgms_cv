@@ -21,6 +21,12 @@ Generated site live at <https://dgmstuart.github.io/dgms_cv/>
 
     $ bundle exec jekyll serve
 
+## Deploy
+
+Edit `_deploy.yml`, then:
+
+    $ bin/deploy
+
 
 
 

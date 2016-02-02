@@ -10,4 +10,4 @@ url: "http://dgmstuart.github.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-exclude: ['Gemfile.lock', 'Gemfile']
+exclude: ['README.md', 'bin', 'Gemfile.lock', 'Gemfile']
