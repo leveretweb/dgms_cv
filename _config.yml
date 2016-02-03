@@ -3,7 +3,7 @@ title: Duncan Graeme Macdonald Stuart - Web Developer
 description: > # this means to ignore newlines until "baseurl:"
   Professional CV of Duncan Grame Macdonald Stuart - 
   a technical architect and web developer working in London
-baseurl: "dgms_cv" # the subpath of your site, e.g. /blog
+baseurl: "/dgms_cv" # the subpath of your site, e.g. /blog
 url: "http://dgmstuart.github.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 # github_username:  jekyll
