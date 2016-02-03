@@ -1,7 +1,7 @@
 [![Dependency Status](https://gemnasium.com/dgmstuart/dgms_cv.png)](https://gemnasium.com/dgmstuart/dgms_cv)
 
 My developer CV, built with
-[Jekyll](https://jekyllrb.com/)
+[Jekyll](https://jekyllrb.com/),
 [Haml](http://haml.info/)
 and [Sass](http://sass-lang.com/)
 
