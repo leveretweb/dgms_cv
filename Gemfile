@@ -1,18 +1,9 @@
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
-# nanoc generates the site:
-gem 'nanoc', '~> 3.8'
-gem 'guard-nanoc', '~> 1.0'
-gem 'guard-livereload', '~> 2.1'
+gem "jekyll", "~> 3.0.2"
 
-# development webserver:
-gem 'adsf', '~> 1.2'
+group :jekyll_plugins do
+  gem "jekyll-haml", "~> 0.1.3"
+end
 
-# Use haml for templates:
-gem 'haml', '~> 4.0'
-# Use sass for stylesheets:
-gem 'sass', '~> 3.4'
-
-# These are used by the checks:
-gem 'nokogiri', '~> 1.6'
-gem 'w3c_validators', '~> 1.2'
+gem "octopress-deploy", "~> 1.3.0"
