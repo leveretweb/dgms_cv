@@ -6,4 +6,5 @@ group :jekyll_plugins do
   gem "jekyll-haml"
 end
 
-gem "octopress-deploy"
+gem "octopress", require: false
+gem "octopress-deploy", require: false
