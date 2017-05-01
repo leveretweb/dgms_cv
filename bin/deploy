@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'octopress-deploy'
-
-Octopress::Deploy.push
