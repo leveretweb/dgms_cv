@@ -22,14 +22,10 @@ layout: default
       %dd
         %a.url{ href: "https://github.com/dgmstuart" } dgmstuart
 
-      %dt Twitter
-      %dd
-        %a.url{ href: "https://twitter.com/dgmstuart" } @dgmstuart
-
       %dt Location
       %dd.adr
-        %span.locality London
-        %span.country UK
+        %span.locality Gothenburg
+        %span.country Sweden
 
 %section.summary
   %header
@@ -50,13 +46,44 @@ layout: default
     %li.experience.vevent.vcard
       %header
         %h3.location
+          %a.url.fn.org{ href: "https://www.varvet.com/" } Varvet
+          %span.adr<
+            %span.locality Gothenburg
+        %span.summary.title Senior Developer
+        %abbr.dtstart{ title: "2018-04-01" } April 2018
+        \-
+        %abbr.dtend{ title: Date.today.to_s } Present
+      %ul.skills
+        %li.skill.dev Rails
+        %li.skill.dev Ruby
+        %li.skill.dev HTML5/CSS3
+        %li.skill.dev GraphQL
+        %li.skill.dev MongoDB
+        %li.skill.dev Postgres
+        %li.skill.approach Agile
+        %li.skill.approach API design
+        %li.skill.approach TDD
+        %li.skill.approach Pair Programming
+      .description
+        %ul
+          %li Responsible for the development and maintenance of features on legacy web projects for a wide variety of clients and sectors
+          %li
+            Lead maintainer on the widely-used
+            %a{ href: "https://github.com/varvet/pundit" } Pundit
+            gem
+          %li Responsible for building and maintaining client relationships
+          %li Resident Git guru
+
+    %li.experience.vevent.vcard
+      %header
+        %h3.location
           %a.url.fn.org{ href: "http://dxw.com" } dxw
           %span.adr<
             %span.locality London
         %span.summary.title Technical Architect
         %abbr.dtstart{ title: "2012-01-01" } January 2012
         \-
-        %abbr.dtend{ title: Date.today.to_s } Present
+        %abbr.dtend{ title: "2018-04-01" } April 2018
       %ul.skills
         %li.skill.dev Rails 3, 4, 5
         %li.skill.dev Sinatra
@@ -71,6 +98,7 @@ layout: default
         %li.skill.dev Docker
         %li.skill.dev Bootstrap
         %li.skill.approach Agile
+        %li.skill.approach API design
         %li.skill.approach TDD
         %li.skill.approach Pair Programming
         %li.skill.non-tech Web Application Security
