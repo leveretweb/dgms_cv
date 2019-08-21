@@ -1,242 +1,144 @@
 /* RESET  */
 /* By Eric Meyer: http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
 
 /* remember to define focus styles! */
-:focus {
-  outline: 0; }
+:focus { outline: 0; }
 
-body {
-  line-height: 1;
-  color: black;
-  background: white; }
+body { line-height: 1; color: black; background: white; }
 
-ol, ul {
-  list-style: none; }
+ol, ul { list-style: none; }
 
 /* tables still need 'cellspacing="0"' in the markup */
-table {
-  border-collapse: separate;
-  border-spacing: 0; }
+table { border-collapse: separate; border-spacing: 0; }
 
-caption, th, td {
-  text-align: left;
-  font-weight: normal; }
+caption, th, td { text-align: left; font-weight: normal; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: ""; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
 
-blockquote, q {
-  quotes: "" ""; }
+blockquote, q { quotes: "" ""; }
 
-a {
-  text-decoration: none;
-  color: inherit; }
+a { text-decoration: none; color: inherit; }
 
-header.vcard address dl:after {
-  content: " ";
-  display: block;
-  clear: both; }
+header.vcard address dl:after { content: " "; display: block; clear: both; }
 
-body {
-  background: #fff;
-  font-size: 16px;
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.2; }
+body { background: #fff; font-size: 16px; font-family: Helvetica, Arial, sans-serif; line-height: 1.2; }
 
-#main {
-  max-width: 800px; }
+#main { max-width: 800px; }
 
-header.vcard {
-  border-left: 8px solid;
-  padding: 15px; }
-  header.vcard h1 .fn {
-    display: block;
-    font-size: 35px;
-    margin-bottom: 20px; }
-  header.vcard h1 .title {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 30px; }
-  header.vcard address {
-    max-width: 500px; }
-    header.vcard address:hover a {
-      text-decoration: underline;
-      transition: color 0.5s ease; }
-      header.vcard address:hover a:hover {
-        color: #b94a48; }
-    header.vcard address dl {
-      min-width: 240px; }
-      header.vcard address dl dt {
-        float: left;
-        clear: left;
-        width: 80px; }
-        header.vcard address dl dt:after {
-          content: ":"; }
-      header.vcard address dl dd {
-        float: right;
-        width: 160px; }
-    header.vcard address .locality:after {
-      content: ","; }
+header.vcard { border-left: 8px solid; padding: 15px; }
 
-section {
-  border-left: 8px solid;
-  padding: 15px;
-  clear: both;
-  margin-top: 20px; }
-  section h2 {
-    margin-bottom: 15px;
-    font-size: 25px;
-    font-weight: bold; }
-  section.summary ul {
-    list-style: disc;
-    margin-left: 20px; }
-    section.summary ul li {
-      margin-bottom: 10px; }
-    section.summary ul ul {
-      list-style: circle; }
+header.vcard h1 .fn { display: block; font-size: 35px; margin-bottom: 20px; }
 
-section .experience {
-  margin: 40px 0 10px 0; }
-  section .experience:hover a {
-    text-decoration: underline;
-    transition: color 0.5s ease; }
-    section .experience:hover a:hover {
-      color: #b94a48; }
-  section .experience header {
-    font-size: 18px; }
-    section .experience header h3.location {
-      margin-bottom: 5px; }
-      section .experience header h3.location a.org {
-        font-size: 25px;
-        font-weight: bold;
-        transition: color 0.5s ease; }
-        section .experience header h3.location a.org:hover {
-          color: #b94a48; }
-      section .experience header h3.location .adr {
-        font-style: italic; }
-        section .experience header h3.location .adr:before {
-          content: "("; }
-        section .experience header h3.location .adr:after {
-          content: ")"; }
-    section .experience header .dtstart, section .experience header .dtend, section .experience header .duration {
-      font-style: italic; }
-  section .experience ul.skills {
-    margin-top: 15px; }
-    section .experience ul.skills li.skill {
-      display: inline-block;
-      padding: 7px 8px 3px;
-      margin-bottom: 4px;
-      color: white; }
-      section .experience ul.skills li.skill.dev {
-        background-color: #b94a48; }
-      section .experience ul.skills li.skill.non-tech {
-        background-color: #3a87ad; }
-      section .experience ul.skills li.skill.approach {
-        background-color: #468847; }
-  section .experience .description ul, section .experience .description p {
-    margin-top: 15px; }
-  section .experience .description ul {
-    list-style: disc;
-    margin-left: 20px; }
-    section .experience .description ul li {
-      margin-bottom: 10px; }
-    section .experience .description ul ul {
-      list-style: circle; }
+header.vcard h1 .title { display: block; font-size: 20px; margin-bottom: 30px; }
 
-section .education {
-  margin-bottom: 15px; }
-  section .education:hover a {
-    text-decoration: underline;
-    transition: color 0.5s ease; }
-    section .education:hover a:hover {
-      color: #b94a48; }
-  section .education h3.summary {
-    font-size: 18px;
-    display: block; }
-  section .education .location, section .education .dtstart, section .education .dtend {
-    font-style: italic; }
+header.vcard address { max-width: 500px; }
 
-.interests:hover a {
-  text-decoration: underline;
-  transition: color 0.5s ease; }
-  .interests:hover a:hover {
-    color: #b94a48; }
-.interests p {
-  margin-bottom: 10px; }
+header.vcard address:hover a { text-decoration: underline; transition: color 0.5s ease; }
 
-.colophon h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px; }
-.colophon li {
-  font-style: italic;
-  margin-bottom: 5px; }
-  .colophon li a {
-    color: #3a87ad; }
+header.vcard address:hover a:hover { color: #b94a48; }
 
-@media only screen and (max-width: 480px) {
-  .experience .summary {
-    display: block;
-    margin-bottom: 10px; } }
-@media only screen and (max-width: 767px) {
-  .experience .summary {
-    margin-right: 20px; } }
-@media only screen and (min-width: 768px) {
-  .experience .summary {
-    margin-right: 150px; } }
-@media print {
-  body {
-    color: #000;
-    background: #fff;
-    width: 100%;
-    margin: 0;
-    padding: 0; }
+header.vcard address dl { min-width: 240px; }
 
-  @page {
-    margin: 1.2cm; }
-  h2, h3 {
-    page-break-after: avoid; }
+header.vcard address dl dt { float: left; clear: left; width: 80px; }
 
-  header {
-    page-break-after: avoid; }
+header.vcard address dl dt:after { content: ":"; }
 
-  .skills {
-    page-break-after: avoid;
-    page-break-inside: avoid; }
+header.vcard address dl dd { float: right; width: 160px; }
 
-  .experience .location a[href^=http]:after {
-    content: " - " attr(href); }
+header.vcard address .locality:after { content: ","; }
 
-  .source_code a[href^=http]:after {
-    content: " (" attr(href) ") "; } }
-@media print and (color) {
-  * {
-    -webkit-print-color-adjust: exact; } }
-@media print and (monochrome) {
-  #main section .experience ul.skills li.skill {
-    color: #000;
-    border: 1px solid #bbb; }
-    #main section .experience ul.skills li.skill.dev {
-      border-style: solid; }
-    #main section .experience ul.skills li.skill.non-tech {
-      border-style: dashed; }
-    #main section .experience ul.skills li.skill.approach {
-      border-style: dotted; } }
+section { border-left: 8px solid; padding: 15px; clear: both; margin-top: 20px; }
+
+section h2 { margin-bottom: 15px; font-size: 25px; font-weight: bold; }
+
+section.summary ul { list-style: disc; margin-left: 20px; }
+
+section.summary ul li { margin-bottom: 10px; }
+
+section.summary ul ul { list-style: circle; }
+
+section .experience { margin: 40px 0 10px 0; }
+
+section .experience:hover a { text-decoration: underline; transition: color 0.5s ease; }
+
+section .experience:hover a:hover { color: #b94a48; }
+
+section .experience header { font-size: 18px; }
+
+section .experience header h3.location { margin-bottom: 5px; }
+
+section .experience header h3.location a.org { font-size: 25px; font-weight: bold; transition: color 0.5s ease; }
+
+section .experience header h3.location a.org:hover { color: #b94a48; }
+
+section .experience header h3.location .adr { font-style: italic; }
+
+section .experience header h3.location .adr:before { content: "("; }
+
+section .experience header h3.location .adr:after { content: ")"; }
+
+section .experience header .dtstart, section .experience header .dtend, section .experience header .duration { font-style: italic; }
+
+section .experience ul.skills { margin-top: 15px; }
+
+section .experience ul.skills li.skill { display: inline-block; padding: 7px 8px 3px; margin-bottom: 4px; color: white; }
+
+section .experience ul.skills li.skill.dev { background-color: #b94a48; }
+
+section .experience ul.skills li.skill.non-tech { background-color: #3a87ad; }
+
+section .experience ul.skills li.skill.approach { background-color: #468847; }
+
+section .experience .description ul, section .experience .description p { margin-top: 15px; }
+
+section .experience .description ul { list-style: disc; margin-left: 20px; }
+
+section .experience .description ul li { margin-bottom: 10px; }
+
+section .experience .description ul ul { list-style: circle; }
+
+section .education { margin-bottom: 15px; }
+
+section .education:hover a { text-decoration: underline; transition: color 0.5s ease; }
+
+section .education:hover a:hover { color: #b94a48; }
+
+section .education h3.summary { font-size: 18px; display: block; }
+
+section .education .location, section .education .dtstart, section .education .dtend { font-style: italic; }
+
+.interests:hover a { text-decoration: underline; transition: color 0.5s ease; }
+
+.interests:hover a:hover { color: #b94a48; }
+
+.interests p { margin-bottom: 10px; }
+
+.colophon h3 { font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+
+.colophon li { font-style: italic; margin-bottom: 5px; }
+
+.colophon li a { color: #3a87ad; }
+
+@media only screen and (max-width: 480px) { .experience .summary { display: block; margin-bottom: 10px; } }
+
+@media only screen and (max-width: 767px) { .experience .summary { margin-right: 20px; } }
+
+@media only screen and (min-width: 768px) { .experience .summary { margin-right: 150px; } }
+
+@media print { body { color: #000; background: #fff; width: 100%; margin: 0; padding: 0; }
+  @page { margin: 1.2cm; }
+  h2, h3 { page-break-after: avoid; }
+  header { page-break-after: avoid; }
+  .skills { page-break-after: avoid; page-break-inside: avoid; }
+  .experience .location a[href^=http]:after { content: " - " attr(href); }
+  .source_code a[href^=http]:after { content: " (" attr(href) ") "; } }
+
+@media print and (color) { * { -webkit-print-color-adjust: exact; } }
+
+@media print and (monochrome) { #main section .experience ul.skills li.skill { color: #000; border: 1px solid #bbb; }
+  #main section .experience ul.skills li.skill.dev { border-style: solid; }
+  #main section .experience ul.skills li.skill.non-tech { border-style: dashed; }
+  #main section .experience ul.skills li.skill.approach { border-style: dotted; } }
+
+/*# sourceMappingURL=main.css.map */
